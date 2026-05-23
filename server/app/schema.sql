@@ -6,7 +6,13 @@ CREATE TABLE IF NOT EXISTS projects (
     description TEXT,
     cover_image_url TEXT,
     featured BOOLEAN,
-    story TEXT
+    visible BOOLEAN
+);
+
+CREATE TABLE IF NOT EXISTS project_stories (
+    project_id INTEGER PRIMARY KEY,
+    story TEXT,
+    FOREIGN KEY (project_id) REFERENCES projects(id)
 );
 
 CREATE TABLE IF NOT EXISTS tags (
