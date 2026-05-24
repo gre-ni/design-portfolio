@@ -1,5 +1,6 @@
 // import { useState } from "react";
 import { Navbar } from "./components/sections/Navbar";
+import { Hero } from "./components/sections/Hero";
 import { navLinks } from "./data/navLinks";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     return (
         <div>
             <Navbar links={navBarLinks} />
+            <Hero />
         </div>
     );
 }
