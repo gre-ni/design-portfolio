@@ -6,3 +6,15 @@ export type Link = {
     type: LinkType;
     icon?: string;
 };
+
+export type ProjectType = {
+    id: number;
+    title: string;
+    slug: string;
+    year: number;
+    description: string;
+    cover_image_url: string;
+    featured: boolean;
+    visible?: boolean;
+    tag?: string;
+};
