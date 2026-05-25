@@ -8,7 +8,7 @@ CORS(app)
 
 DB_PATH = Path(__file__).parent / "instance" / "portfolio.db"
 
-@app.route("/projects", methods=["GET"])
+@app.route("/api/projects", methods=["GET"])
 def projects_all():
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
@@ -17,7 +17,7 @@ def projects_all():
         return jsonify([dict(row) for row in results]), 200
         
 
-@app.route("/stories", methods=["GET"])
+@app.route("/api/stories", methods=["GET"])
 def project_story():
     id = request.args["id"]
     with sqlite3.connect(DB_PATH) as con: 
