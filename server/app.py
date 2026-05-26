@@ -13,7 +13,7 @@ def projects_all():
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM projects").fetchall() # returns list of sqlite row objects
+        results = db.execute("SELECT * FROM projects WHERE visible = 1").fetchall() # returns list of sqlite row objects
         return jsonify([dict(row) for row in results]), 200
         
 
