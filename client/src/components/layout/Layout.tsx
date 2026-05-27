@@ -10,7 +10,7 @@ export const Layout = ({ children }: LayoutProps) => {
             <div className="col-span-1">
                 <Sidebar />
             </div>
-            <main className="col-span-7">{children}</main>
+            <main className="col-span-7 p-8 md:pt-12 md:px-16">{children}</main>
         </div>
     );
 };

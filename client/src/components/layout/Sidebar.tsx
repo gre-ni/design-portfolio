@@ -5,7 +5,7 @@ const navBarLinks = navLinks.filter((link) => link.type == "navbar");
 
 export const Sidebar = () => {
     return (
-        <div className="border-r-1 border-white h-screen sticky top-0">
+        <div className="border-r border-grey h-screen sticky top-0">
             <p>logo</p>
             <p>maybe links</p>
             <Navbar links={navBarLinks} />

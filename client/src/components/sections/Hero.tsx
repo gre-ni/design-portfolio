@@ -31,8 +31,8 @@ export const Hero = () => {
     }, []);
 
     return (
-        <div className="p-8 md:p-12 grid grid-cols-6 gap-8">
-            <h1 className="col-span-6 text-5xl/snug md:text-[3.5rem]/tight font-thin antialiased">
+        <div className="grid grid-cols-6 gap-8">
+            <h1 className="col-span-6 text-5xl/snug md:text-[3.5rem] leading-[1.15] font-thin antialiased">
                 Hi, I'm{" "}
                 <span ref={word1Ref} className={highlightClass}>
                     Nikol
