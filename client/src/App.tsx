@@ -5,14 +5,12 @@ import { Layout } from "./components/layout/Layout";
 
 function App() {
     return (
-        <>
-            <Layout>
-                <div>
-                    <Hero />
-                    <ProjectSection />
-                </div>
-            </Layout>
-        </>
+        <Layout>
+            <div>
+                <Hero />
+                <ProjectSection />
+            </div>
+        </Layout>
     );
 }
 
