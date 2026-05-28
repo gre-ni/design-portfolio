@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS projects (
     description TEXT,
     cover_image_url TEXT,
     featured BOOLEAN,
-    visible BOOLEAN
+    visible BOOLEAN,
+    ordering INTEGER,
 );
 
 CREATE TABLE IF NOT EXISTS project_stories (
