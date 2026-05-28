@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { Main } from "./components/sections/Main";
 import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { Layout } from "./components/layout/Layout";

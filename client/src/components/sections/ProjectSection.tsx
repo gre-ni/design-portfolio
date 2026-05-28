@@ -12,8 +12,8 @@ export const ProjectSection = () => {
     useEffect(() => {
         async function loadProjects() {
             const url = tag
-                ? `http://localhost:5000/api/projects?tag=${tag}`
-                : `http://localhost:5000/api/projects`;
+                ? `http://127.0.0.1:5000/api/projects?tag=${tag}`
+                : `http://127.0.0.1:5000/api/projects`;
 
             const response = await fetch(url);
             const data = await response.json();
