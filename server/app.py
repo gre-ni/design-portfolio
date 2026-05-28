@@ -27,11 +27,11 @@ def projects_all():
         
 @app.route("/api/stories", methods=["GET"])
 def project_story():
-    id = request.args.get("id")
+    title = request.args.get("title")
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM project_stories WHERE project_id = ?", (id,)).fetchall()
+        results = db.execute("SELECT * FROM project_stories WHERE project_id = (SELECT id FROM projects WHERE title = ?)", (title,)).fetchall()
         print(results)
         return jsonify([dict(row) for row in results]), 200
     
