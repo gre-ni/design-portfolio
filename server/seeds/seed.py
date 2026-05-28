@@ -34,7 +34,6 @@ query = """INSERT INTO projects (title, slug, year, description, cover_image_url
         visible = excluded.visible
     """
 
-
 with open("projects.csv") as f:
     reader = csv.DictReader(f)
     db = con.cursor()

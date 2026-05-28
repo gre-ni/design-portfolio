@@ -7,9 +7,9 @@ type NavbarProps = {
 
 export const Navbar = (props: NavbarProps) => {
     return (
-        <div>
+        <div className="flex md:flex-col gap-2">
             {props.links.map((link) => (
-                <MenuLink name={link.name} path={link.path} />
+                <MenuLink name={link.name} path={link.path} icon={link.icon} />
             ))}
         </div>
     );

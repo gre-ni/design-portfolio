@@ -10,16 +10,24 @@ DB_PATH = Path(__file__).parent / "instance" / "portfolio.db"
 
 @app.route("/api/projects", methods=["GET"])
 def projects_all():
+    tag = request.args.get["tag"]
+    if not tag:
+        with sqlite3.connect(DB_PATH) as con: 
+            con.row_factory = sqlite3.Row
+            db = con.cursor()
+            results = db.execute("SELECT * FROM projects WHERE visible = 1").fetchall() # returns list of sqlite row objects
+            return jsonify([dict(row) for row in results]), 200
+
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM projects WHERE visible = 1").fetchall() # returns list of sqlite row objects
-        return jsonify([dict(row) for row in results]), 200
+        results = db.execute("SELECT * FROM projects WHERE visible = 1 and WHERE id = (SELECT project_id FROM project_tags WHERE tag_id = (SELECT id FROM tags WHERE name = ?))", (tag,)).fetchall() # returns list of sqlite row objects
+        return jsonify([dict(row) for row in results]), 200   
+    
         
-
 @app.route("/api/stories", methods=["GET"])
 def project_story():
-    id = request.args["id"]
+    id = request.args.get["id"]
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()

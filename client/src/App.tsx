@@ -1,15 +1,18 @@
 // import { useState } from "react";
-import { Hero } from "./components/sections/Hero";
-import { ProjectSection } from "./components/sections/ProjectSection";
+import { Main } from "./components/sections/Main";
+import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { Layout } from "./components/layout/Layout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+    { path: "/", element: <Main /> },
+    { path: "/:name", element: <ProjectDetail /> },
+]);
 
 function App() {
     return (
         <Layout>
-            <div>
-                <Hero />
-                <ProjectSection />
-            </div>
+            <RouterProvider router={router} />
         </Layout>
     );
 }
