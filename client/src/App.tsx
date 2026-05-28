@@ -1,19 +1,21 @@
 import { Main } from "./components/sections/Main";
-import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { Layout } from "./components/layout/Layout";
+import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-    { path: "/", element: <Main /> },
-    { path: "/:name", element: <ProjectDetail /> },
+    {
+        path: "/",
+        element: <Layout />,
+        children: [
+            { index: true, element: <Main /> },
+            { path: "/:name", element: <ProjectDetail /> },
+        ],
+    },
 ]);
 
 function App() {
-    return (
-        <Layout>
-            <RouterProvider router={router} />
-        </Layout>
-    );
+    return <RouterProvider router={router} />;
 }
 
 export default App;

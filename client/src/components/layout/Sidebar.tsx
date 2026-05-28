@@ -1,15 +1,18 @@
 import { Navbar } from "../sections/Navbar.tsx";
 import { navLinks } from "../../data/navLinks.ts";
+import { Link } from "react-router-dom";
 
 const navBarLinks = navLinks.filter((link) => link.type == "navbar");
 
 export const Sidebar = () => {
     return (
         <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 p-8 md:px-10 md:pt-12 justify-between">
-            <img
-                src="../../public/vectors/greni-logo.svg"
-                className="max-w-20 h-auto"
-            ></img>
+            <Link to="/">
+                <img
+                    src="/vectors/greni-logo.svg"
+                    className="max-w-20 h-auto"
+                ></img>
+            </Link>
             <Navbar links={navBarLinks} />
             <div>
                 <div className="flex gap-2 py-5">
@@ -21,7 +24,7 @@ export const Sidebar = () => {
                     </a>
                     <a href="https://www.linkedin.com/in/nikolgreplova/">
                         <img
-                            src="./vectors/linkedin-icon.svg"
+                            src="/vectors/linkedin-icon.svg"
                             className="max-w-5 h-auto"
                         />
                     </a>
