@@ -15,23 +15,45 @@ def projects_all():
         with sqlite3.connect(DB_PATH) as con: 
             con.row_factory = sqlite3.Row
             db = con.cursor()
-            results = db.execute("SELECT * FROM projects WHERE visible = 1 ORDER BY featured DESC").fetchall() # returns list of sqlite row objects
+            results = db.execute("SELECT * FROM projects WHERE visible = 1 ORDER BY ordering DESC, featured DESC").fetchall() # returns list of sqlite row objects
+            print(results)
             return jsonify([dict(row) for row in results]), 200
 
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM projects WHERE visible = 1 AND id = (SELECT project_id FROM project_tags WHERE tag_id = (SELECT id FROM tags WHERE name = ?))", (tag,)).fetchall() # returns list of sqlite row objects
+        results = db.execute("SELECT * FROM projects WHERE featured = 1 AND id IN (SELECT project_id FROM project_tags WHERE tag_id IN (SELECT id FROM tags WHERE name = ?))", (tag,)).fetchall() # returns list of sqlite row objects
         return jsonify([dict(row) for row in results]), 200   
     
         
-@app.route("/api/stories", methods=["GET"])
+@app.route("/api/detail", methods=["GET"])
 def project_story():
-    title = request.args.get("title")
+    slug = request.args.get("slug")
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM project_stories WHERE project_id = (SELECT id FROM projects WHERE title = ?)", (title,)).fetchall()
+        results = db.execute("""
+            SELECT id, title, slug, year, description, cover_image_url, project_stories.story
+            FROM projects
+            LEFT JOIN project_stories ON projects.id = project_stories.project_id
+            WHERE slug = ?
+            """, (slug,)).fetchall()
         print(results)
         return jsonify([dict(row) for row in results]), 200
     
+
+@app.route("/api/tags", methods=["GET"])
+def project_tags():
+    slug = request.args.get("slug")
+    with sqlite3.connect(DB_PATH) as con: 
+        con.row_factory = sqlite3.Row
+        db = con.cursor()
+        results = db.execute("""
+            SELECT slug, tags.name, tags.type
+            FROM projects
+            LEFT JOIN project_tags ON projects.id = project_tags.project_id
+            JOIN tags ON project_tags.tag_id = tags.id
+            WHERE slug = ?
+            """, (slug,)).fetchall()
+        print(results)
+        return jsonify([dict(row) for row in results]), 200

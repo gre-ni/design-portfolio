@@ -31,7 +31,7 @@ query = """INSERT INTO projects (title, slug, year, description, cover_image_url
         description = excluded.description,
         cover_image_url = excluded.cover_image_url,
         featured = excluded.featured,
-        visible = excluded.visible
+        visible = excluded.visible,
         ordering = excluded.ordering
     """
 
@@ -71,6 +71,17 @@ with open("projects-tags.csv") as f:
         )
         """, (row["project"], row["tag"]))
 
+with open("projects-images.csv") as f:
+    reader = csv.DictReader(f)
+    db = con.cursor()
+    for row in reader:
+        db.execute("""
+        INSERT OR IGNORE INTO project_images (project_id, image_url, ordering)
+        VALUES (
+            (SELECT id FROM projects WHERE slug = ?),
+            ?, ?
+        )
+        """, (row["project"], row["url"], row["ordering"]))
 
 con.commit()
 con.close()

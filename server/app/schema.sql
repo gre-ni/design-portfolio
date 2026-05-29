@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS projects (
     cover_image_url TEXT,
     featured BOOLEAN,
     visible BOOLEAN,
-    ordering INTEGER,
+    ordering INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS project_stories (
@@ -26,4 +26,12 @@ CREATE TABLE IF NOT EXISTS project_tags (
     project_id INTEGER REFERENCES projects(id),
     tag_id INTEGER REFERENCES tags(id),
     PRIMARY KEY (project_id, tag_id)
+);
+
+CREATE TABLE IF NOT EXISTS project_images (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,    
+    project_id INTEGER,
+    image_url TEXT,
+    ordering INTEGER,
+    FOREIGN KEY (project_id) REFERENCES projects(id)
 );
