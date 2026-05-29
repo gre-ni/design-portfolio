@@ -27,9 +27,11 @@ export type ProjectDetailsType = {
     year: number;
     description: string;
     cover_image_url: string;
-    featured?: boolean;
-    visible?: boolean;
-    ordering?: number;
-    tag?: string;
     story?: string;
+};
+
+export type Tag = {
+    slug: string;
+    name: string;
+    type: string;
 };
