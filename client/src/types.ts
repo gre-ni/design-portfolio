@@ -16,5 +16,20 @@ export type ProjectType = {
     cover_image_url: string;
     featured: boolean;
     visible?: boolean;
+    ordering: number;
     tag?: string;
+};
+
+export type ProjectDetailsType = {
+    id: number;
+    title: string;
+    slug: string;
+    year: number;
+    description: string;
+    cover_image_url: string;
+    featured?: boolean;
+    visible?: boolean;
+    ordering?: number;
+    tag?: string;
+    story?: string;
 };
