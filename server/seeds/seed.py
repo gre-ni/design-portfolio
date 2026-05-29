@@ -22,8 +22,8 @@ with open("tags.csv") as f:
 
 
 # Projects table
-query = """INSERT INTO projects (title, slug, year, description, cover_image_url, featured, visible) 
-    VALUES (?, ?, ?, ?, ?, ?, ?)
+query = """INSERT INTO projects (title, slug, year, description, cover_image_url, featured, visible, ordering) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     ON CONFLICT(slug) DO UPDATE SET
         title = excluded.title,
         slug = excluded.slug,
@@ -32,13 +32,14 @@ query = """INSERT INTO projects (title, slug, year, description, cover_image_url
         cover_image_url = excluded.cover_image_url,
         featured = excluded.featured,
         visible = excluded.visible
+        ordering = excluded.ordering
     """
 
 with open("projects.csv") as f:
     reader = csv.DictReader(f)
     db = con.cursor()
     for row in reader:
-        db.execute(query, (row["title"], row["slug"], row["year"], row["description"], row["cover_image_url"], row["featured"], row["visible"]))
+        db.execute(query, (row["title"], row["slug"], row["year"], row["description"], row["cover_image_url"], row["featured"], row["visible"], row["ordering"]))
 
 
 # Stories table
