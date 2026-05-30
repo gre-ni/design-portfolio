@@ -9,7 +9,7 @@ export const Sidebar = () => {
         <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 p-8 md:px-10 md:pt-12 justify-between">
             <Link to="/">
                 <img
-                    src="/vectors/greni-logo.svg"
+                    src="/vectors/greni-logo-dark.svg"
                     className="max-w-20 h-auto"
                 ></img>
             </Link>
@@ -18,13 +18,13 @@ export const Sidebar = () => {
                 <div className="flex gap-2 py-5">
                     <a href="https://github.com/gre-ni">
                         <img
-                            src="/vectors/github-logo.svg"
+                            src="/vectors/github-logo-dark.svg"
                             className="max-w-5 h-auto text-highlight"
                         />
                     </a>
                     <a href="https://www.linkedin.com/in/nikolgreplova/">
                         <img
-                            src="/vectors/linkedin-icon.svg"
+                            src="/vectors/linkedin-icon-dark.svg"
                             className="max-w-5 h-auto"
                         />
                     </a>
