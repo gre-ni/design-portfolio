@@ -9,7 +9,7 @@ type LinkProps = {
 export const MenuLink = (props: LinkProps) => {
     return (
         <div className="flex gap-3">
-            <img src={props.icon} className="max-w-3 h-auto" />
+            <img src={props.icon} className="max-w-6 h-auto" />
             <Link
                 to={props.path}
                 key={props.name}
