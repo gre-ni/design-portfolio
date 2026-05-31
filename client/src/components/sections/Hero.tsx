@@ -35,7 +35,7 @@ export const Hero = () => {
 
     return (
         <div className="grid grid-cols-6 gap-8 pb-10">
-            <h1 className="col-span-6 text-5xl/snug md:text-[3.5rem] leading-[1.15] font-thin antialiased">
+            <h1 className="col-span-6 text-5xl/snug md:text-[3rem] leading-[1.15] font-thin antialiased">
                 Hi, I'm{" "}
                 <span className={highlightClass}>
                     Nikol

@@ -35,3 +35,8 @@ export type Tag = {
     name: string;
     type: string;
 };
+
+export type ProjectImageType = {
+    slug: string;
+    image_url: string;
+};

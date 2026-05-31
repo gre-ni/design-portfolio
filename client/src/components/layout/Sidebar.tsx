@@ -6,7 +6,7 @@ const navBarLinks = navLinks.filter((link) => link.type == "navbar");
 
 export const Sidebar = () => {
     return (
-        <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 p-8 md:px-10 md:pt-12 justify-between">
+        <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 py-8 px-4 xl:px-10 xl:pt-12 justify-between">
             <Link to="/">
                 <img
                     src="/vectors/greni-logo-dark.svg"
