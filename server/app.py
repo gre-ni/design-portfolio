@@ -55,5 +55,19 @@ def project_tags():
             JOIN tags ON project_tags.tag_id = tags.id
             WHERE slug = ?
             """, (slug,)).fetchall()
-        print(results)
+        return jsonify([dict(row) for row in results]), 200
+
+@app.route("/api/images", methods=["GET"])
+def project_images():
+    slug = request.args.get("slug")
+    with sqlite3.connect(DB_PATH) as con: 
+        con.row_factory = sqlite3.Row
+        db = con.cursor()
+        results = db.execute("""
+            SELECT slug, project_images.image_url
+            FROM projects
+            LEFT JOIN project_images ON projects.id = project_images.project_id
+            WHERE slug = ?
+            ORDER BY project_images.ordering DESC
+            """, (slug,)).fetchall()
         return jsonify([dict(row) for row in results]), 200
