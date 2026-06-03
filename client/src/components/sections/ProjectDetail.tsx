@@ -44,38 +44,47 @@ export const ProjectDetail = () => {
         <div>
             <div className="flex flex-col gap-4 pb-10">
                 <BackButton />
-                <h1>{projectDetails[0].title}</h1>
+                <h1 className="text-highlight">{projectDetails[0].title}</h1>
             </div>
-            <div className="grid grid-cols-5 pb-10">
-                <div className="col-span-1">
-                    <h3>Tools</h3>
-                    {projectTags
-                        .filter((tag) => tag.type == "tool")
-                        .map((tag) => (
-                            <li>{tag.name}</li>
-                        ))}
-                </div>
-                <div className="col-span-1">
-                    <h3>Domain</h3>
-                    {projectTags
-                        .filter((tag) => tag.type == "industry")
-                        .map((tag) => (
-                            <li>{tag.name}</li>
-                        ))}
-                </div>
-                <div className="col-span-1">
-                    <h3>Year</h3>
-                    <p>{projectDetails[0].year}</p>
-                </div>
-            </div>
-            <div className="grid grid-cols-2 gap-10">
-                <div>
-                    <img src={projectDetails[0].cover_image_url} />
+
+            <div className="md:grid md:grid-cols-2 gap-10">
+                <div className="flex flex-col gap-4">
+                    <img
+                        src={projectDetails[0].cover_image_url}
+                        className="w-full h-full rounded-sm"
+                    />
                     {projectImages.map((image) => (
-                        <img src={image.image_url} />
+                        <img
+                            src={image.image_url}
+                            className="w-full h-full object-cover rounded-sm"
+                        />
                     ))}
                 </div>
-                <div>{projectDetails[0].story}</div>
+                <div>
+                    <div className="grid grid-cols-3 pb-10">
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Tools</h3>
+                            {projectTags
+                                .filter((tag) => tag.type == "tool")
+                                .map((tag) => (
+                                    <p className="pt-1">{tag.name}</p>
+                                ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Domain</h3>
+                            {projectTags
+                                .filter((tag) => tag.type == "industry")
+                                .map((tag) => (
+                                    <p className="pt-1">{tag.name}</p>
+                                ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Year</h3>
+                            <p className="pt-1">{projectDetails[0].year}</p>
+                        </div>
+                    </div>
+                    <div>{projectDetails[0].story}</div>
+                </div>
             </div>
         </div>
     );

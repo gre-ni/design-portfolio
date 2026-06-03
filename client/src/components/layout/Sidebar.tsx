@@ -13,7 +13,7 @@ export const Sidebar = () => {
                     className="max-w-20 h-auto"
                 ></img>
             </Link>
-            <Navbar links={navBarLinks} />
+            <Navbar links={navBarLinks} type="desktop" />
             <div>
                 <div className="flex gap-2 py-5">
                     <a href="https://github.com/gre-ni">

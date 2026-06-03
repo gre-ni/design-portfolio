@@ -5,10 +5,10 @@ export const BackButton = () => {
         <Link to="/">
             <div className="flex gap-2">
                 <img
-                    src="/vectors/arrow-up-icon.svg"
-                    className="max-w-4 h-auto"
+                    src="/vectors/arrow-icon.svg"
+                    className="max-w-5 h-auto pb-1"
                 />
-                <p>Back to all projects</p>
+                <p className="text-dark">Back to all projects</p>
             </div>
         </Link>
     );

@@ -1,9 +1,3 @@
-<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M11.4142 8.5V1H3.28922M11.4142 1L1.41422 11" stroke="white" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
-<path d="M11.4142 8.5V1H3.28922M11.4142 1L1.41422 11" stroke="url(#pattern0_247_415)" stroke-opacity="0.2" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
-<defs>
-<pattern id="pattern0_247_415" patternUnits="userSpaceOnUse" patternTransform="matrix(16 0 0 16 -1.79289 -1.79289)" preserveAspectRatio="none" viewBox="0 0 16 16" width="1" height="1">
-<g id="pattern0_247_415_inner">
-</g>
-</pattern></defs>
+<svg width="70" height="64" viewBox="0 0 70 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M43.1333 0.63743C41.5523 2.21743 42.7263 4.99541 46.2163 7.93241L49.9663 11.0884L45.4663 10.5224C37.0793 9.46844 16.9983 8.00243 10.7163 7.98643C0.553251 7.96043 0.808219 7.27642 0.233219 36.0934C-0.221781 58.9254 -0.133696 60.5965 1.6203 62.4565C3.0873 64.0105 3.87129 64.2084 5.23029 63.3644C9.02529 61.0074 9.87121 56.9884 10.5772 37.9704C10.9552 27.7954 11.3103 19.3584 11.3653 19.2204C11.6513 18.5114 28.9803 19.1175 36.6943 20.1075L45.5584 21.2434L42.0123 24.4924C38.0723 28.1004 37.7383 29.4864 40.0233 32.7474C41.8473 35.3524 44.1613 35.5734 47.2153 33.4334C51.4983 30.4334 61.3893 25.9704 63.7553 25.9704C66.7803 25.9704 69.4663 23.0735 69.4663 19.8105C69.4663 16.7105 56.4303 3.68845 51.0933 1.45945C47.2883 -0.130548 44.2173 -0.44757 43.1333 0.63743Z" fill="#1E1E1E"/>
 </svg>

@@ -1,13 +1,37 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "./Sidebar";
+import { MobileMenu } from "../sections/MobileMenu";
+import { useState, useEffect } from "react";
 
 export const Layout = () => {
+    const [currentWidth, setCurrentWidth] = useState<number>(window.innerWidth);
+
+    useEffect(() => {
+        const changeWidth = (): void => {
+            setCurrentWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", changeWidth);
+        return () => window.removeEventListener("resize", changeWidth);
+    }, []);
+
+    if (currentWidth < 750) {
+        return (
+            <div className="">
+                <div className="">
+                    <MobileMenu />
+                </div>
+                <main className="p-8 md:pt-10 md:px-12">
+                    <Outlet />
+                </main>
+            </div>
+        );
+    }
     return (
-        <div className="md:grid md:grid-cols-9 xl:grid-cols-8">
-            <div className="md:col-span-2 xl:col-span-1">
+        <div className="flex">
+            <div className="max-w-sm min-">
                 <Sidebar />
             </div>
-            <main className="md:col-span-7 xl:col-span-7 p-8 md:pt-10 md:px-12">
+            <main className="p-8 md:pt-10 md:px-12">
                 <Outlet />
             </main>
         </div>
