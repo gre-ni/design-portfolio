@@ -10,6 +10,7 @@ export const ProjectDetail = () => {
     );
     const [projectTags, setProjectTags] = useState<Tag[]>([]);
     const [projectImages, setProjectImages] = useState<ProjectImageType[]>([]);
+    const [currentWidth, setCurrentWidth] = useState<number>(window.innerWidth);
 
     useEffect(() => {
         async function loadProject() {
@@ -38,17 +39,94 @@ export const ProjectDetail = () => {
         loadImages();
     }, [slug]);
 
+    useEffect(() => {
+        const changeWidth = (): void => {
+            setCurrentWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", changeWidth);
+        return () => window.removeEventListener("resize", changeWidth);
+    }, []);
+
     if (!projectDetails.length) return <p>Loading...</p>;
+    if (!projectImages.length) return <p>Loading...</p>;
+
+    if (currentWidth < 750) {
+        return (
+            <>
+                <div className="flex flex-col gap-6 pb-10">
+                    <BackButton />
+                    <h1 className="text-highlight">
+                        {projectDetails[0].title}
+                    </h1>
+                </div>
+                <div>
+                    <div
+                        id="project-tags-mobile"
+                        className="grid grid-cols-3 pb-10 gap-1"
+                    >
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Tools</h3>
+                            {projectTags
+                                .filter((tag) => tag.type == "tool")
+                                .map((tag) => (
+                                    <p className="pt-1 text-[13px]">
+                                        {tag.name}
+                                    </p>
+                                ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Domain</h3>
+                            {projectTags
+                                .filter((tag) => tag.type == "industry")
+                                .map((tag) => (
+                                    <p className="pt-1 text-[13px]">
+                                        {tag.name}
+                                    </p>
+                                ))}
+                        </div>
+                        <div className="col-span-1">
+                            <h3 className="text-highlight pb-2">Year</h3>
+                            <p className="pt-1 text-[13px]">
+                                {projectDetails[0].year}
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        id="intro-images-mobile"
+                        className="flex flex-col gap-2"
+                    >
+                        <img
+                            src={projectDetails[0].cover_image_url}
+                            className="w-full h-full rounded-sm"
+                        />
+                        <img
+                            src={projectImages[0].image_url}
+                            className="w-full h-full object-cover rounded-sm"
+                        />
+                    </div>
+                    <div className="py-4">{projectDetails[0].story}</div>
+                    <div className="flex flex-col gap-2">
+                        {projectImages.slice(1).map((image) => (
+                            <img
+                                src={image.image_url}
+                                className="w-full h-full object-cover rounded-sm"
+                            />
+                        ))}
+                    </div>
+                </div>
+            </>
+        );
+    }
 
     return (
-        <div>
+        <>
             <div className="flex flex-col gap-4 pb-10">
                 <BackButton />
                 <h1 className="text-highlight">{projectDetails[0].title}</h1>
             </div>
 
-            <div className="md:grid md:grid-cols-2 gap-10">
-                <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-2 gap-10">
+                <div id="project-tags-desktop" className="flex flex-col gap-4">
                     <img
                         src={projectDetails[0].cover_image_url}
                         className="w-full h-full rounded-sm"
@@ -60,32 +138,8 @@ export const ProjectDetail = () => {
                         />
                     ))}
                 </div>
-                <div>
-                    <div className="grid grid-cols-3 pb-10">
-                        <div className="col-span-1">
-                            <h3 className="text-highlight pb-2">Tools</h3>
-                            {projectTags
-                                .filter((tag) => tag.type == "tool")
-                                .map((tag) => (
-                                    <p className="pt-1">{tag.name}</p>
-                                ))}
-                        </div>
-                        <div className="col-span-1">
-                            <h3 className="text-highlight pb-2">Domain</h3>
-                            {projectTags
-                                .filter((tag) => tag.type == "industry")
-                                .map((tag) => (
-                                    <p className="pt-1">{tag.name}</p>
-                                ))}
-                        </div>
-                        <div className="col-span-1">
-                            <h3 className="text-highlight pb-2">Year</h3>
-                            <p className="pt-1">{projectDetails[0].year}</p>
-                        </div>
-                    </div>
-                    <div>{projectDetails[0].story}</div>
-                </div>
+                <div>{projectDetails[0].story}</div>
             </div>
-        </div>
+        </>
     );
 };
