@@ -124,9 +124,33 @@ export const ProjectDetail = () => {
                 <BackButton />
                 <h1 className="text-highlight">{projectDetails[0].title}</h1>
             </div>
-
+            <div
+                id="project-tags-desktop"
+                className="grid grid-cols-5 pb-10 gap-1"
+            >
+                <div className="col-span-1">
+                    <h3 className="text-highlight pb-2">Tools</h3>
+                    {projectTags
+                        .filter((tag) => tag.type == "tool")
+                        .map((tag) => (
+                            <p className="pt-1 text-[13px]">{tag.name}</p>
+                        ))}
+                </div>
+                <div className="col-span-1">
+                    <h3 className="text-highlight pb-2">Domain</h3>
+                    {projectTags
+                        .filter((tag) => tag.type == "industry")
+                        .map((tag) => (
+                            <p className="pt-1 text-[13px]">{tag.name}</p>
+                        ))}
+                </div>
+                <div className="col-span-1">
+                    <h3 className="text-highlight pb-2">Year</h3>
+                    <p className="pt-1 text-[13px]">{projectDetails[0].year}</p>
+                </div>
+            </div>
             <div className="grid grid-cols-2 gap-10">
-                <div id="project-tags-desktop" className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4">
                     <img
                         src={projectDetails[0].cover_image_url}
                         className="w-full h-full rounded-sm"

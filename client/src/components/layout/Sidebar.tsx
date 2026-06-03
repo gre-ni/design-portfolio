@@ -6,7 +6,7 @@ const navBarLinks = navLinks.filter((link) => link.type == "navbar");
 
 export const Sidebar = () => {
     return (
-        <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 py-8 px-4 xl:px-10 xl:pt-12 justify-between">
+        <div className="border-r border-grey md:flex md:flex-col md:h-screen md:sticky top-0 px-10 pt-12 pb-10 justify-between">
             <Link to="/">
                 <img
                     src="/vectors/greni-logo-dark.svg"
@@ -30,7 +30,7 @@ export const Sidebar = () => {
                     </a>
                 </div>
                 <p className="text-[12px]">
-                    code and design @ nikol greplova, 2026
+                    design and code <br /> © Nikol Greplova 2026
                 </p>
             </div>
         </div>

@@ -7,7 +7,7 @@ type ProjectListProps = {
 
 export const ProjectList = (props: ProjectListProps) => {
     return (
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {props.projects.map((project) => (
                 <ProjectThumbnail project={project} key={project.id} />
             ))}

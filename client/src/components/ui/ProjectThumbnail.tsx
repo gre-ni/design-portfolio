@@ -8,8 +8,8 @@ type ProjectThumbnailProps = {
 export const ProjectThumbnail = ({ project }: ProjectThumbnailProps) => {
     return (
         <Link to={project.slug}>
-            <div className="mb-4 group overflow-hidden">
-                <div className="overflow-hidden rounded-sm relative h-60 2xl:h-76">
+            <div className="group overflow-hidden">
+                <div className="overflow-hidden rounded-sm relative aspect-3/2">
                     <img
                         src={project.cover_image_url}
                         alt={project.title}
