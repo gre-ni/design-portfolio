@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { BackButton } from "../ui/BackButton";
+import ReactMarkdown from "react-markdown";
 import type { ProjectDetailsType, ProjectImageType, Tag } from "../../types";
 
 export const ProjectDetail = () => {
@@ -50,16 +51,21 @@ export const ProjectDetail = () => {
     if (!projectDetails.length) return <p>Loading...</p>;
     if (!projectImages.length) return <p>Loading...</p>;
 
+    const markdown = projectDetails[0].story;
+
     if (currentWidth < 750) {
         return (
             <>
-                <div className="flex flex-col gap-6 pb-10">
+                <div className="flex flex-col gap-6 pb-2">
                     <BackButton />
                     <h1 className="text-highlight">
                         {projectDetails[0].title}
                     </h1>
                 </div>
                 <div>
+                    <div className="text-dark pb-10">
+                        {projectDetails[0].description}
+                    </div>
                     <div
                         id="project-tags-mobile"
                         className="grid grid-cols-3 pb-10 gap-1"
@@ -104,7 +110,9 @@ export const ProjectDetail = () => {
                             className="w-full h-full object-cover rounded-sm"
                         />
                     </div>
-                    <div className="py-4">{projectDetails[0].story}</div>
+                    <div className="py-4">
+                        <ReactMarkdown>{markdown}</ReactMarkdown>
+                    </div>
                     <div className="flex flex-col gap-2">
                         {projectImages.slice(1).map((image) => (
                             <img
@@ -162,7 +170,14 @@ export const ProjectDetail = () => {
                         />
                     ))}
                 </div>
-                <div>{projectDetails[0].story}</div>
+                <div>
+                    <div className="text-dark pb-4">
+                        {projectDetails[0].description}
+                    </div>
+                    <div>
+                        <ReactMarkdown>{markdown}</ReactMarkdown>
+                    </div>
+                </div>
             </div>
         </>
     );
