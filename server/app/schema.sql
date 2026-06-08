@@ -33,5 +33,6 @@ CREATE TABLE IF NOT EXISTS project_images (
     project_id INTEGER,
     image_url TEXT,
     ordering INTEGER,
+    visible BOOLEAN,
     FOREIGN KEY (project_id) REFERENCES projects(id)
 );

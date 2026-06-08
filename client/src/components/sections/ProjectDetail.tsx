@@ -75,7 +75,10 @@ export const ProjectDetail = () => {
                             {projectTags
                                 .filter((tag) => tag.type == "tool")
                                 .map((tag) => (
-                                    <p className="pt-1 text-[13px]">
+                                    <p
+                                        className="pt-1 text-[13px]"
+                                        key={tag.name}
+                                    >
                                         {tag.name}
                                     </p>
                                 ))}
@@ -85,7 +88,10 @@ export const ProjectDetail = () => {
                             {projectTags
                                 .filter((tag) => tag.type == "industry")
                                 .map((tag) => (
-                                    <p className="pt-1 text-[13px]">
+                                    <p
+                                        className="pt-1 text-[13px]"
+                                        key={tag.name}
+                                    >
                                         {tag.name}
                                     </p>
                                 ))}
@@ -118,6 +124,7 @@ export const ProjectDetail = () => {
                             <img
                                 src={image.image_url}
                                 className="w-full h-full object-cover rounded-sm aspect-auto"
+                                key={image.image_url}
                             />
                         ))}
                     </div>
@@ -143,7 +150,9 @@ export const ProjectDetail = () => {
                     {projectTags
                         .filter((tag) => tag.type == "tool")
                         .map((tag) => (
-                            <p className="pt-1 text-[13px]">{tag.name}</p>
+                            <p key={tag.name} className="pt-1 text-[13px]">
+                                {tag.name}
+                            </p>
                         ))}
                 </div>
                 <div className="col-span-1">
@@ -151,7 +160,9 @@ export const ProjectDetail = () => {
                     {projectTags
                         .filter((tag) => tag.type == "industry")
                         .map((tag) => (
-                            <p className="pt-1 text-[13px]">{tag.name}</p>
+                            <p key={tag.name} className="pt-1 text-[13px]">
+                                {tag.name}
+                            </p>
                         ))}
                 </div>
                 <div className="col-span-1">
@@ -169,6 +180,7 @@ export const ProjectDetail = () => {
                         <img
                             src={image.image_url}
                             className="w-full h-auto object-cover rounded-sm aspect-auto"
+                            key={image.image_url}
                         />
                     ))}
                 </div>

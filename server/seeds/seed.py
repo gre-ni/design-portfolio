@@ -76,12 +76,12 @@ with open("projects-images.csv") as f:
     db = con.cursor()
     for row in reader:
         db.execute("""
-        INSERT OR IGNORE INTO project_images (project_id, image_url, ordering)
+        INSERT OR IGNORE INTO project_images (project_id, image_url, ordering, visible)
         VALUES (
             (SELECT id FROM projects WHERE slug = ?),
-            ?, ?
+            ?, ?, ?
         )
-        """, (row["project"], row["url"], row["ordering"]))
+        """, (row["project"], row["url"], row["ordering"], row["visible"]))
 
 con.commit()
 con.close()
