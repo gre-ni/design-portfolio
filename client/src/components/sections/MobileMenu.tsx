@@ -2,6 +2,7 @@ import { navLinks } from "../../data/navLinks.ts";
 import { Navbar } from "../sections/Navbar.tsx";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const navBarLinks = navLinks.filter((link) => link.type == "navbar");
 
@@ -27,10 +28,12 @@ export const MobileMenu = () => {
             <div className="flex flex-col justify-between h-screen w-screen sticky bg-highlight p-8">
                 <div className="flex justify-end">
                     <button onClick={changeOpen}>
-                        <img
-                            src="/vectors/exit-icon-white.svg"
-                            className="max-w-6 h-auto"
-                        />
+                        <Link to="/">
+                            <img
+                                src="/vectors/exit-icon-white.svg"
+                                className="max-w-6 h-auto"
+                            />
+                        </Link>
                     </button>
                 </div>
                 <div className="p-8">
