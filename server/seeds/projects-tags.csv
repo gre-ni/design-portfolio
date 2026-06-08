@@ -1,39 +1,102 @@
 project,tag
 carmen-mola,book
 carmen-mola,print
-carmen-mola,photoshop
+carmen-mola,adobe photoshop
 carmen-mola,publishing
-dcerina-kletba,book
-dcerina-kletba,print
-dcerina-kletba,photoshop
-dcerina-kletba,publishing
+decks,marketing
+decks,google slides
+decks,digital
+decks,marketing
+finepack-brand,branding
+finepack-brand,web
+finepack-brand,adobe indesign
+finepack-brand,adobe illustrator
+finepack-brand,packaging
 finepack-print,print
+finepack-print,adobe indesign
+finepack-print,packaging
 hotel-atlantic,book
 hotel-atlantic,print
-hotel-atlantic,photoshop
+hotel-atlantic,adobe photoshop
 hotel-atlantic,publishing
+icon-redesign,figma
+icon-redesign,digital
+icon-redesign,adobe illustrator
+icon-redesign,branding
+icon-redesign,software
 jules-wake,book
 jules-wake,illustration
 jules-wake,print
-jules-wake,photoshop
+jules-wake,adobe photoshop
 jules-wake,publishing
 kniha-kterou,book
 kniha-kterou,illustration
 kniha-kterou,print
-kniha-kterou,photoshop
+kniha-kterou,adobe photoshop
 kniha-kterou,publishing
 muj-bratr,book
 muj-bratr,print
-muj-bratr,photoshop
+muj-bratr,adobe photoshop
 muj-bratr,publishing
 prazacka,book
 prazacka,illustration
 prazacka,print
-prazacka,photoshop
+prazacka,adobe photoshop
 prazacka,publishing
+pribehy,adobe photoshop
+pribehy,adobe illustrator
+pribehy,illustration
+pribehy,print
+pribehy,book
+research-report,marketing
+research-report,software
+research-report,digital
+research-report,adobe photoshop
+research-report,ai
+research-report,adobe indesign
+rousky,packaging
+rousky,illustration
+rousky,adobe illustrator
+rousky,print
 schovavana,book
 schovavana,print
-schovavana,photoshop
+schovavana,adobe photoshop
 schovavana,publishing
+uhokynare,print
+uhokynare,branding
+uhokynare,food and beverage
+uhokynare,adobe illustrator
+uhokynare,adobe indesign
+wrike-digital,branding
+wrike-digital,figma
+wrike-digital,marketing
+wrike-digital,software
+wrike-digital,digital
+wrike-handouts,print
+wrike-handouts,print
+wrike-handouts,software
+wrike-handouts,marketing
+wrike-handouts,adobe photoshop
+wrike-handouts,adobe illustrator
+wrike-handouts,adobe indesign
+wrike-handouts,figma
 year-in-review,web
+year-in-review,adobe illustrator
+year-in-review,illustration
+year-in-review,figma
+year-in-review,marketing
+zeme-na-taliri,print
+zeme-na-taliri,non-profit
+zeme-na-taliri,adobe illustrator
+zeme-na-taliri,adobe indesign
 zichovec,web
+zichovec,adobe xd
+zichovec,adobe photoshop
+zichovec,digital
+zichovec,food and beverage
+rousky,print
+rousky,illustration
+rousky,packaging
+finepack-print,adobe illustrator
+finepack-print,packaging
+jules-wake,procreate

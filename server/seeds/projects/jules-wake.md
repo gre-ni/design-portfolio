@@ -1,1 +1,3 @@
-# Detail description for Book Covers: Jules Wake Novels
+This series of illustrations was a continuation of an already established layout started by a different artist. Since Jules Wake (also known as Julie Caplin) is a prolific author, with a large backlog being translated and published continuously, it was important to preserve consistency of this series' look.
+
+I've contributed to the series with five different illustrations/book covers. The small improvements made were mostly in adding more decorative details to balance out the otherwise spacious scene and also in limiting the colour palette in order to give each edition a unique feel. I've also chosen to use more textured and grainy brushes to bring a bit more personality into the illustrations.

@@ -1,1 +1,5 @@
-# Detail description for Year in Review 2025
+Year in Review is a yearly Wrike campaign that shifts the focus from product and features to celebrating customers and their achievements. The challenge with this project's visual identity is in maintaining the brand consistency while creating a sense of celebration with an engaging set of new assets. For us designers, this campaign can provide an opportunity for experimentation and pushing our visual language to its limits.
+
+This particular year, after a series of changes and refinement to our brand system, it was all the more important not to steer away from the defined palette and shape language. Therefore, I have decided to create a set of illustrations using minimal geometric language and small gradient shapes, reimagining our elements in a more festive way, while incorporating UI elements straight from product in neutral glass.
+
+The campaign itself requires several design deliverables: a landing page with per-user statistics (tasks completed, most productive day, top collaborators), each section paired with its own spot illustration; an email newsletter version adapted in scale and feel; and a set of badges for social sharing that each user receives, summarizing their year into a single award badge, for example the "Top 10% in productivity".

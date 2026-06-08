@@ -8,7 +8,9 @@ export const BackButton = () => {
                     src="/vectors/arrow-icon.svg"
                     className="max-w-5 h-auto pb-1"
                 />
-                <p className="text-dark">Back to all projects</p>
+                <p className="text-dark hover:text-highlight">
+                    Back to all projects
+                </p>
             </div>
         </Link>
     );

@@ -15,14 +15,13 @@ def projects_all():
         with sqlite3.connect(DB_PATH) as con: 
             con.row_factory = sqlite3.Row
             db = con.cursor()
-            results = db.execute("SELECT * FROM projects WHERE visible = 1 ORDER BY ordering DESC, featured DESC").fetchall() # returns list of sqlite row objects
-            print(results)
+            results = db.execute("SELECT * FROM projects WHERE featured = 1 ORDER BY ordering DESC, featured DESC").fetchall() # returns list of sqlite row objects
             return jsonify([dict(row) for row in results]), 200
 
     with sqlite3.connect(DB_PATH) as con: 
         con.row_factory = sqlite3.Row
         db = con.cursor()
-        results = db.execute("SELECT * FROM projects WHERE featured = 1 AND id IN (SELECT project_id FROM project_tags WHERE tag_id IN (SELECT id FROM tags WHERE name = ?))", (tag,)).fetchall() # returns list of sqlite row objects
+        results = db.execute("SELECT * FROM projects WHERE visible = 1 AND id IN (SELECT project_id FROM project_tags WHERE tag_id IN (SELECT id FROM tags WHERE name = ?))", (tag,)).fetchall() # returns list of sqlite row objects
         return jsonify([dict(row) for row in results]), 200   
     
         
@@ -64,7 +63,7 @@ def project_images():
         con.row_factory = sqlite3.Row
         db = con.cursor()
         results = db.execute("""
-            SELECT slug, project_images.image_url
+            SELECT slug, project_images.image_url as image_url
             FROM projects
             LEFT JOIN project_images ON projects.id = project_images.project_id
             WHERE slug = ?

@@ -103,21 +103,21 @@ export const ProjectDetail = () => {
                     >
                         <img
                             src={projectDetails[0].cover_image_url}
-                            className="w-full h-full rounded-sm"
+                            className="w-full h-full rounded-sm aspect-auto"
                         />
                         <img
                             src={projectImages[0].image_url}
-                            className="w-full h-full object-cover rounded-sm"
+                            className="w-full h-full object-cover rounded-sm aspect-auto"
                         />
                     </div>
-                    <div className="py-4">
+                    <div className="py-6 whitespace-pre-line">
                         <ReactMarkdown>{markdown}</ReactMarkdown>
                     </div>
                     <div className="flex flex-col gap-2">
                         {projectImages.slice(1).map((image) => (
                             <img
                                 src={image.image_url}
-                                className="w-full h-full object-cover rounded-sm"
+                                className="w-full h-full object-cover rounded-sm aspect-auto"
                             />
                         ))}
                     </div>
@@ -130,7 +130,9 @@ export const ProjectDetail = () => {
         <>
             <div className="flex flex-col gap-4 pb-10">
                 <BackButton />
-                <h1 className="text-highlight">{projectDetails[0].title}</h1>
+                <h1 className="text-highlight text-[2.5rem]">
+                    {projectDetails[0].title}
+                </h1>
             </div>
             <div
                 id="project-tags-desktop"
@@ -161,20 +163,20 @@ export const ProjectDetail = () => {
                 <div className="flex flex-col gap-4">
                     <img
                         src={projectDetails[0].cover_image_url}
-                        className="w-full h-full rounded-sm"
+                        className="w-full h-full rounded-sm aspect-auto"
                     />
                     {projectImages.map((image) => (
                         <img
                             src={image.image_url}
-                            className="w-full h-full object-cover rounded-sm"
+                            className="w-full h-full object-cover rounded-sm aspect-auto"
                         />
                     ))}
                 </div>
                 <div>
-                    <div className="text-dark pb-4">
+                    <div className="text-highlight text-[1.4rem] font-serif pb-6 pr-10">
                         {projectDetails[0].description}
                     </div>
-                    <div>
+                    <div className="pr-10 xl:pr-20 whitespace-pre-line">
                         <ReactMarkdown>{markdown}</ReactMarkdown>
                     </div>
                 </div>

@@ -1,1 +1,5 @@
-# Detail description for Zichovec: Web Design
+Zichovec is a small Czech craft brewery with a distinctly original identity (as many Czech beer enthusiasts may attest to, both in look and taste). In this website redesign project, the team decided to move away from a templated Shoptet setup and create a much more bespoke presentation and ordering experience.
+
+The design direction was also inspired by their iconic beer labels: sharp-edged and immediately recognizable by their strange house shape and colourful background photographs. Looking at the structure of their new website and the vibrant content provided, the concept quickly became clear: a clean, minimal, black-and-white canvas, making their product photography the hero. While the home page is still a bit more artistic, the rest of the website completely gives way to the tasty-looking shots of fruity beers.
+
+One small extra detail worth recognising: the footer also references the landscape of Zichovec, which is the name of the village where this team of passionate people brews their beer to this day.

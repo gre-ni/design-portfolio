@@ -1,14 +1,21 @@
 name,type
-illustration,category
-print,category
-web,category
-figma,tool
-photoshop,tool
-illustrator,tool
+adobe illustrator,tool
+adobe indesign,tool
+adobe photoshop,tool
+adobe xd,tool
 ai,tool
-marketing,industry
-publishing,industry
-manufacturing,industry
-digital,category
 book,category
+branding,category
+digital,category
+figma,tool
+food and beverage,industry
+google slides,tool
+illustration,category
+marketing,industry
 non-profit,industry
+packaging,industry
+print,category
+publishing,industry
+software,industry
+web,category
+procreate,tool

@@ -1,1 +1,3 @@
-# Detail description for Wrike: Banners and Ads
+When collaborating with the corporate marketing team, the main challenge has always been to find a way of creating engaging visuals while remaining consistent with our overall brand direction. For this, I have usually tried to find the correct boundaries - where can we be playful while remaining recognisable? Which shapes still belong to the same family and which are pushing the line a little too far?
+
+With each asset, I found it important to stay mindful of the larger picture and make sure that the brand doesn't stray away just for the sake of a quick attention grab. Even for projects with more emotional tone of voice, I noticed that the brand can start dilluting quite quickly if the imagery strays too far.
