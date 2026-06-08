@@ -4,6 +4,8 @@ import { BackButton } from "../ui/BackButton";
 import ReactMarkdown from "react-markdown";
 import type { ProjectDetailsType, ProjectImageType, Tag } from "../../types";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export const ProjectDetail = () => {
     const { slug } = useParams();
     const [projectDetails, setProjectDetails] = useState<ProjectDetailsType[]>(
@@ -12,30 +14,26 @@ export const ProjectDetail = () => {
     const [projectTags, setProjectTags] = useState<Tag[]>([]);
     const [projectImages, setProjectImages] = useState<ProjectImageType[]>([]);
     const [currentWidth, setCurrentWidth] = useState<number>(window.innerWidth);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadProject() {
-            const response = await fetch(
-                `http://127.0.0.1:5000/api/detail?slug=${slug}`,
-            );
+            const response = await fetch(`${BASE_URL}api/detail?slug=${slug}`);
             const data = await response.json();
             setProjectDetails(data);
         }
         loadProject();
         async function loadTags() {
-            const response = await fetch(
-                `http://127.0.0.1:5000/api/tags?slug=${slug}`,
-            );
+            const response = await fetch(`${BASE_URL}api/tags?slug=${slug}`);
             const data = await response.json();
             setProjectTags(data);
         }
         loadTags();
         async function loadImages() {
-            const response = await fetch(
-                `http://127.0.0.1:5000/api/images?slug=${slug}`,
-            );
+            const response = await fetch(`${BASE_URL}api/images?slug=${slug}`);
             const data = await response.json();
             setProjectImages(data);
+            setLoading(false);
         }
         loadImages();
     }, [slug]);
@@ -48,8 +46,8 @@ export const ProjectDetail = () => {
         return () => window.removeEventListener("resize", changeWidth);
     }, []);
 
-    if (!projectDetails.length) return <p>Loading...</p>;
-    if (!projectImages.length) return <p>Loading...</p>;
+    if (!projectDetails.length || loading) return <p>Loading...</p>;
+    // if (!projectImages.length) return <p>Loading...</p>;
 
     const markdown = projectDetails[0].story;
 

@@ -4,6 +4,8 @@ import { useSearchParams } from "react-router-dom";
 
 // import { useParams } from "react-router-dom";
 
+const BASE_URL = import.meta.env.VITE_API_URL;
+
 export const ProjectSection = () => {
     const [projects, setProjects] = useState([]);
     const [searchParams] = useSearchParams();
@@ -12,8 +14,8 @@ export const ProjectSection = () => {
     useEffect(() => {
         async function loadProjects() {
             const url = tag
-                ? `http://127.0.0.1:5000/api/projects?tag=${tag}`
-                : `http://127.0.0.1:5000/api/projects`;
+                ? `${BASE_URL}api/projects?tag=${tag}`
+                : `${BASE_URL}api/projects`;
 
             const response = await fetch(url);
             const data = await response.json();
