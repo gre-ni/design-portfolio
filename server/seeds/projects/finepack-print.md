@@ -1,1 +1,1 @@
-Series of typesetting projects of internal documents. Here, I wanted to highlight the importance of well-organised and structured layouting, so that internal documentation is easy to orientate in, but also representational.
+Series of typesetting projects of internal documents. Here, I wanted to highlight the importance of well-organised and structured layouting so that internal documentation is easy to orientate in but also representative.
