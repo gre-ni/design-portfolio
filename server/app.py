@@ -66,7 +66,7 @@ def project_images():
             SELECT slug, project_images.image_url as image_url
             FROM projects
             LEFT JOIN project_images ON projects.id = project_images.project_id
-            WHERE slug = ?
+            WHERE slug = ? AND visible = 1
             ORDER BY project_images.ordering DESC
             """, (slug,)).fetchall()
         return jsonify([dict(row) for row in results]), 200
