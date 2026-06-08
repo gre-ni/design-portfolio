@@ -49,10 +49,18 @@ export const Hero = () => {
                 </span>
                 .
             </h1>
-            <p className="col-span-6">
-                While I come from pretty illustrative traditional background,
-                but my latest work has been more focused on enterprise branding
-                solutions.
+            <p className="col-span-6 lg:pr-20">
+                Welcome to my collection of design projects, hosting everything
+                from traditional illustration to digital corporate marketing
+                assets. If{""}&nbsp;you’re curious about my more technical work,
+                here is a{" "}
+                <a
+                    href="https://greni.dev/"
+                    className="underline text-highlight"
+                >
+                    link
+                </a>{" "}
+                to my other development-focused portfolio.
             </p>
         </div>
     );
