@@ -23,7 +23,13 @@ export const ProjectThumbnail = ({ project }: ProjectThumbnailProps) => {
                                 {project.description}
                             </p> */}
                         </div>
-                        <span className="text-white">View project</span>
+                        <div className="flex items-center gap-2">
+                            <img
+                                src="/vectors/white-arrow.svg"
+                                className="w-5 h-auto"
+                            />
+                            <span className="text-white">View project</span>
+                        </div>
                     </div>
                 </div>
             </div>

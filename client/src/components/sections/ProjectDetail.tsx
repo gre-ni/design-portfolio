@@ -53,7 +53,7 @@ export const ProjectDetail = () => {
 
     const markdown = projectDetails[0].story;
 
-    if (currentWidth < 750) {
+    if (currentWidth < 768) {
         return (
             <>
                 <div className="flex flex-col gap-6 pb-2">
@@ -136,7 +136,7 @@ export const ProjectDetail = () => {
             </div>
             <div
                 id="project-tags-desktop"
-                className="grid grid-cols-5 pb-10 gap-1"
+                className="grid grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 pb-10 gap-1"
             >
                 <div className="col-span-1">
                     <h3 className="text-highlight pb-2">Tools</h3>
@@ -163,12 +163,12 @@ export const ProjectDetail = () => {
                 <div className="flex flex-col gap-4">
                     <img
                         src={projectDetails[0].cover_image_url}
-                        className="w-full h-full rounded-sm aspect-auto"
+                        className="w-full h-auto rounded-sm aspect-auto"
                     />
                     {projectImages.map((image) => (
                         <img
                             src={image.image_url}
-                            className="w-full h-full object-cover rounded-sm aspect-auto"
+                            className="w-full h-auto object-cover rounded-sm aspect-auto"
                         />
                     ))}
                 </div>
@@ -176,7 +176,7 @@ export const ProjectDetail = () => {
                     <div className="text-highlight text-[1.4rem] font-serif pb-6 pr-10">
                         {projectDetails[0].description}
                     </div>
-                    <div className="pr-10 xl:pr-20 whitespace-pre-line">
+                    <div className="lg:pr-10 xl:pr-20 whitespace-pre-line list-decimal">
                         <ReactMarkdown>{markdown}</ReactMarkdown>
                     </div>
                 </div>

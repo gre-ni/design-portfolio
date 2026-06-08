@@ -14,7 +14,7 @@ export const Layout = () => {
         return () => window.removeEventListener("resize", changeWidth);
     }, []);
 
-    if (currentWidth < 750) {
+    if (currentWidth < 768) {
         return (
             <div className="">
                 <div className="">

@@ -2,16 +2,16 @@ import type { Link } from "../types";
 
 export const navLinks: Link[] = [
     {
-        name: "web",
-        path: "/?tag=web",
-        type: "navbar",
-        icon: "/vectors/web-icon",
-    },
-    {
         name: "digital",
         path: "/?tag=digital",
         type: "navbar",
         icon: "/vectors/digital-icon",
+    },
+    {
+        name: "print",
+        path: "/?tag=print",
+        type: "navbar",
+        icon: "/vectors/print-icon",
     },
     {
         name: "books",
@@ -20,10 +20,10 @@ export const navLinks: Link[] = [
         icon: "/vectors/books-icon",
     },
     {
-        name: "print",
-        path: "/?tag=print",
+        name: "web",
+        path: "/?tag=web",
         type: "navbar",
-        icon: "/vectors/print-icon",
+        icon: "/vectors/web-icon",
     },
     {
         name: "illustration",
