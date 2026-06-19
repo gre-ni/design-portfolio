@@ -37,7 +37,6 @@ def project_story():
             LEFT JOIN project_stories ON projects.id = project_stories.project_id
             WHERE slug = ?
             """, (slug,)).fetchall()
-        print(results)
         return jsonify([dict(row) for row in results]), 200
     
 
